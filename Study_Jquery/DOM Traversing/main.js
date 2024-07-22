@@ -3,13 +3,14 @@ $(document).ready(() => {
   $('.shoe-details').show();
   
   $('.more-details-button').on('click', event => {
-   
+    $(event.currentTarget).closest('.product-details').next('.shoe-details').toggle()
   });  
   
   $('.shoe-details li').on('click', event => {
     $(event.currentTarget).addClass('active');
     $('.shoe-details').children().removeClass('disabled')   
         $(event.currentTarget).siblings().removeClass('active')
+    $(event.currentTarget).closest('.shoe-details').children().removeClass('disabled')  
   });
   
   
